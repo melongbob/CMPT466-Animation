@@ -59,15 +59,96 @@ void ForwardKinematic::calculateJointPosRecursivelyWithQuaternion(Joint* joint)
 Vector4 ForwardKinematic::computeLocalQuaternion(Joint* joint)
 {
 	/*add/edit your code here for part 1*/
+	Vector4 quaternion = Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+	float degreetorad = 3.14f / 180.0f;
+	float x, y, z;
+	
+	// NONE = 0, ZYX = 1, YZX = 2, ZXY = 3, XZY = 5, YXZ = 6, XYZ = 7
+	switch(joint->rotationOrder){
+		case 0:; //NONE
 
-	//defult return
-	return Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+			return quaternion;
+
+		case 1:; //ZYX
+		
+			z = pFrame[0];
+			y = pFrame[1];
+			x = pFrame[2];
+			break;
+
+		case 2:; //YZX
+		
+			y = pFrame[0];
+			z = pFrame[1];
+			x = pFrame[2];
+			break;
+	
+		case 3:; //ZXY
+	
+			z = pFrame[0];
+			x = pFrame[1];
+			y = pFrame[2];
+			break;
+
+		case 5:; //XZY
+		
+			x = pFrame[0];
+			z = pFrame[1];
+			y = pFrame[2];
+			break;
+		case 6:; //YXZ
+
+			y = pFrame[0];
+			x = pFrame[1];
+			z = pFrame[2];
+			break;
+
+		case 7:; //XYZ
+		
+			x = pFrame[0];
+			y = pFrame[1];
+			z = pFrame[2];
+			break;
+
+		default:;
+			return quaternion;
+	}
+	pFrame += 3;
+
+	Vector4 q_x = buildQuaternionRotation(x, 1, 0, 0);
+	Vector4 q_y = buildQuaternionRotation(y, 0, 1, 0);
+	Vector4 q_z = buildQuaternionRotation(z, 0, 0, 1);
+
+	// NONE = 0, ZYX = 1, YZX = 2, ZXY = 3, XZY = 5, YXZ = 6, XYZ = 7
+	switch (joint->rotationOrder) {
+	case 1: 	
+		quaternion = quaternionMultiplication(q_z, quaternionMultiplication(q_y, q_x));
+	case 2:
+		quaternion = quaternionMultiplication(q_y, quaternionMultiplication(q_z, q_x));
+	case 3:
+		quaternion = quaternionMultiplication(q_z, quaternionMultiplication(q_x, q_y));
+	case 5:
+		quaternion = quaternionMultiplication(q_x, quaternionMultiplication(q_z, q_y));
+	case 6:
+		quaternion = quaternionMultiplication(q_y, quaternionMultiplication(q_x, q_z));
+	case 7:
+		quaternion = quaternionMultiplication(q_x, quaternionMultiplication(q_y, q_z));
+	}
+
+	return quaternion;
 }
 
 /*compute global rotation quaternion accumulated from root joint for a joint*/
 Vector4 ForwardKinematic::computeGlobalQuaternion(Joint* joint, Vector4 localQuat)
 {
 	/*add/edit your code here for part 2*/
+
+	if (joint->parent != nullptr) {
+		Vector4 globalQuat = quaternionMultiplication(
+								joint->parent->Globalquat, localQuat);
+		joint->Globalquat = globalQuat;
+		return globalQuat;
+	}
 
 	//default return
 	return localQuat;
@@ -76,7 +157,19 @@ Vector4 ForwardKinematic::computeGlobalQuaternion(Joint* joint, Vector4 localQua
 //based on global quaternion and local position, compute global position for a joint
 Vector4 ForwardKinematic::computeGlobalPosition(Joint* joint)
 {
-	/*add/edit your code here for part 2*/
+	/*add/edit your code here for part 3*/
+	if (joint->parent != nullptr) {
+		Vector4 inverse = Vector4(-joint->parent->Globalquat.x, 
+								  -joint->parent->Globalquat.y, 
+								  -joint->parent->Globalquat.z, 
+								   joint->parent->Globalquat.w);
+		Vector4 current = quaternionMultiplication(
+							quaternionMultiplication(
+								joint->parent->Globalquat, 
+								joint->LocalPos), inverse);
+		joint->GlobalPos = joint->parent->GlobalPos + current;
+		return joint->GlobalPos;
+	}
 
 	//default return
 	joint->GlobalPos = joint->LocalPos;
