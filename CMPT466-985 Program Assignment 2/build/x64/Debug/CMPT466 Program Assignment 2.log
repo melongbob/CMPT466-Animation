@@ -1,0 +1,56 @@
+﻿  Skeleton.cpp
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.h(61): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.h(76): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.h(124): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.h(135): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(63): warning C4267: 'argument': conversion from 'size_t' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(64): warning C4267: 'argument': conversion from 'size_t' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(65): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(66): warning C4267: 'argument': conversion from 'size_t' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(67): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(68): warning C4267: 'argument': conversion from 'size_t' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(69): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(72): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(73): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(74): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(116): warning C4267: 'argument': conversion from 'size_t' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(119): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(120): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(300): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(306): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(312): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(343): warning C4715: 'Skeleton::loadHiarachy': not all control paths return a value
+c:\users\sara1\dropbox\sara\updated cmpt466-888 program assignment 2\build\skeleton.cpp(415): warning C4715: 'Skeleton::loadFrameData': not all control paths return a value
+  CMPT466 Program Assignment 2.vcxproj -> C:\Users\sara1\Dropbox\Sara\Updated CMPT466-888 Program Assignment 2\build\x64\Debug\CMPT466 Program Assignment 2.exe
